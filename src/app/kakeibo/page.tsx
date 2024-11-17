@@ -3,11 +3,7 @@
 export default function Kakeibos() {
   return (
     <>
-      <h1
-        style={{ textAlign: "center", fontSize: "24px", marginBottom: "16px" }}
-      >
-        家計簿 一覧画面
-      </h1>
+      <h1>一覧画面</h1>
       <div
         style={{
           display: "flex",
@@ -36,8 +32,7 @@ export default function Kakeibos() {
         <button
           style={{
             padding: "8px 16px",
-            backgroundColor: "#4CAF50",
-            color: "#fff",
+            backgroundColor: "#7d7d7d",
             border: "none",
             borderRadius: "4px",
           }}
@@ -47,8 +42,7 @@ export default function Kakeibos() {
         <button
           style={{
             padding: "8px 16px",
-            backgroundColor: "#2196F3",
-            color: "#fff",
+            backgroundColor: "#7d7d7d",
             border: "none",
             borderRadius: "4px",
           }}
@@ -63,7 +57,6 @@ export default function Kakeibos() {
             display: "flex",
             justifyContent: "space-between",
             marginBottom: "8px",
-            fontWeight: "bold",
           }}
         >
           <p style={{ flex: 2 }}>項目</p>
