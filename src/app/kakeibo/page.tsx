@@ -1,9 +1,15 @@
 // // 家計簿一覧画面
+import { Headers } from "../components/Header";
 
 export default function Kakeibos() {
   return (
     <>
-      <h1>一覧画面</h1>
+      <div>
+        <Headers />
+      </div>
+      <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>
+        一覧画面
+      </h1>
       <div
         style={{
           display: "flex",

@@ -1,10 +1,9 @@
-// 家計簿作成画面
-
-export default function Create() {
+// 家計簿編集画面
+export default function Edit() {
   return (
     <>
       <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>
-        作成画面
+        編集画面
       </h1>
       <div
         style={{
@@ -103,7 +102,7 @@ export default function Create() {
             marginLeft: "auto",
           }}
         >
-          作成
+          更新
         </button>
       </div>
     </>

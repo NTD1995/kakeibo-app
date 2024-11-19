@@ -1,10 +1,9 @@
-// 家計簿作成画面
-
-export default function Create() {
+// 家計簿詳細画面
+export default function Detail() {
   return (
     <>
       <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>
-        作成画面
+        詳細画面
       </h1>
       <div
         style={{
@@ -94,17 +93,35 @@ export default function Create() {
           padding: "10px",
         }}
       >
-        <button
+        <div
           style={{
-            padding: "8px 16px",
-            backgroundColor: "#228B22",
-            border: "none",
-            borderRadius: "4px",
-            marginLeft: "auto",
+            flex: 1,
+            display: "flex",
+            justifyContent: "center",
+            gap: "10px",
           }}
         >
-          作成
-        </button>
+          <button
+            style={{
+              padding: "8px 16px",
+              backgroundColor: "#32CD32",
+              border: "none",
+              borderRadius: "4px",
+            }}
+          >
+            編集
+          </button>
+          <button
+            style={{
+              padding: "8px 16px",
+              backgroundColor: "#32CD32",
+              border: "none",
+              borderRadius: "4px",
+            }}
+          >
+            削除
+          </button>
+        </div>
       </div>
     </>
   );
