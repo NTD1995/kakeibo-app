@@ -1,7 +1,12 @@
 // 家計簿詳細画面
+import { Headers } from "../components/Header";
+
 export default function Detail() {
   return (
     <>
+      <div>
+        <Headers />
+      </div>
       <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>
         詳細画面
       </h1>

@@ -1,7 +1,12 @@
 // 家計簿編集画面
+import { Headers } from "../components/Header";
+
 export default function Edit() {
   return (
     <>
+      <div>
+        <Headers />
+      </div>
       <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>
         編集画面
       </h1>

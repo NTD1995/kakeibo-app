@@ -1,8 +1,12 @@
 // 家計簿作成画面
+import { Headers } from "../components/Header";
 
 export default function Create() {
   return (
     <>
+      <div>
+        <Headers />
+      </div>
       <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>
         作成画面
       </h1>
