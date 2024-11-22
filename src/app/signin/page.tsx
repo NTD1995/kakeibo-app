@@ -70,6 +70,27 @@ export default function Loguin() {
           <input style={{ width: "100%" }} />
         </div>
       </div>
-  
+
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "10px",
+        }}
+      >
+        <button
+          style={{
+            padding: "8px 16px",
+            backgroundColor: "#32CD32",
+            border: "none",
+            borderRadius: "4px",
+            marginLeft: "auto",
+          }}
+        >
+          ログイン
+        </button>
+      </div>
+    </>
   );
 }
