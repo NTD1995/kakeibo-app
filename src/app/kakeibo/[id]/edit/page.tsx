@@ -45,7 +45,7 @@ export default function Edit() {
           }}
         >
           <p>項目</p>
-          <input style={{ width: "100%" }} />
+          <input style={{ width: "100%", border: "1px solid #ccc" }} />
         </div>
         <div
           style={{
@@ -56,7 +56,7 @@ export default function Edit() {
           }}
         >
           <p>金額</p>
-          <input style={{ width: "100%" }} />
+          <input style={{ width: "100%", border: "1px solid #ccc" }} />
         </div>
         <div
           style={{

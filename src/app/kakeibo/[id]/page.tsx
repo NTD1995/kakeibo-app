@@ -45,7 +45,11 @@ export default function Detail() {
           }}
         >
           <p>項目</p>
-          <input style={{ width: "100%" }} />
+          <span
+            style={{ width: "100%", border: "1px solid #ccc", padding: "5px" }}
+          >
+            朝ごはん
+          </span>
         </div>
         <div
           style={{
@@ -56,7 +60,11 @@ export default function Detail() {
           }}
         >
           <p>金額</p>
-          <input style={{ width: "100%" }} />
+          <span
+            style={{ width: "100%", border: "1px solid #ccc", padding: "5px" }}
+          >
+            500円
+          </span>
         </div>
         <div
           style={{

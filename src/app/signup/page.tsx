@@ -58,16 +58,26 @@ export default function Loguin() {
           <p>パスワード</p>
           <input style={{ width: "100%" }} />
         </div>
+
         <div
           style={{
             display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            width: "100%",
+            justifyContent: "space-between",
+            alignItems: "center",
+            padding: "10px",
           }}
         >
-          <p>Googleログイン</p>
-          <input style={{ width: "100%" }} />
+          <button
+            style={{
+              padding: "8px 16px",
+              backgroundColor: "#32CD32",
+              border: "none",
+              borderRadius: "4px",
+              marginLeft: "auto",
+            }}
+          >
+            Googleログイン
+          </button>
         </div>
       </div>
 
