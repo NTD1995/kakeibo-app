@@ -1,5 +1,22 @@
 // 家計簿詳細画面
+import { useRouter } from 'next/router';
+import useStore from '../store';
 
+export default function Detail() {
+  const router = useRouter();
+  const { id } = router.query;
+  const { expenses } = useStore();
+  const expense = expenses.find((e) => e.id === id);
+
+  const handleEdit = async (updatedData) => {
+    await updateExpense(id, updatedData);
+    router.push('/');
+  };
+
+  const handleDelete = async () => {
+    await deleteExpense(id);
+    router.push('/');
+  };
 export default function Detail() {
   return (
     <>
@@ -117,6 +134,7 @@ export default function Detail() {
               border: "none",
               borderRadius: "4px",
             }}
+            onClick={() => handleEdit({ item: '新しい項目', price: 1500, category: '趣味' })}
           >
             編集
           </button>
@@ -127,6 +145,7 @@ export default function Detail() {
               border: "none",
               borderRadius: "4px",
             }}
+            onClick={handleDelete}
           >
             削除
           </button>

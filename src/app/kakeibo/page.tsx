@@ -1,6 +1,16 @@
 // // 家計簿一覧画面
+import { useState, useEffect } from "react";
+import { useRouter } from "next/router";
+import useStore from "../store";
 
 export default function Kakeibos() {
+  const router = useRouter();
+  const { expenses, selectedCategory, setSelectedCategory } = useStore();
+
+  useEffect(() => {
+    expenses();
+  }, []);
+
   return (
     <>
       <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>
@@ -50,6 +60,16 @@ export default function Kakeibos() {
           }}
         >
           作成
+        </button>
+        <button
+          style={{
+            padding: "8px 16px",
+            backgroundColor: "#7d7d7d",
+            border: "none",
+            borderRadius: "4px",
+          }}
+        >
+          詳細
         </button>
       </div>
 

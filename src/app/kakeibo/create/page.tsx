@@ -1,9 +1,11 @@
 // 家計簿作成画面
+"use client";
+
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 
 export default function Create() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [item, setItem] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("食費");
@@ -16,39 +18,37 @@ export default function Create() {
       amount,
       category,
     };
-
-    console.log("新しい支出:", newExpense);
-
-    navigate(-1);
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
-        <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>
-          作成画面
-        </h1>
-        <div
+      <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>
+        作成画面
+      </h1>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "10px",
+        }}
+      >
+        <button
           style={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            padding: "10px",
+            padding: "8px 16px",
+            backgroundColor: "#32CD32",
+            border: "none",
+            borderRadius: "4px",
+            marginLeft: "auto",
           }}
         >
-          <button
-            style={{
-              padding: "8px 16px",
-              backgroundColor: "#32CD32",
-              border: "none",
-              borderRadius: "4px",
-              marginLeft: "auto",
-            }}
-          >
+          <button type="button" onClick={() => router.back()}>
             戻る
           </button>
-        </div>
+        </button>
+      </div>
 
+      <form onSubmit={handleSubmit}>
         <div
           style={{
             display: "flex",
@@ -123,10 +123,9 @@ export default function Create() {
               border: "none",
               borderRadius: "4px",
               marginLeft: "auto",
-              type = "submit",
             }}
           >
-            作成
+            <input type="submit" value="作成" />
           </button>
         </div>
       </form>
