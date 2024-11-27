@@ -1,15 +1,22 @@
 // // 家計簿一覧画面
+"use client";
+
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import useStore from "../store";
 
 export default function Kakeibos() {
   const router = useRouter();
-  const { expenses, selectedCategory, setSelectedCategory } = useStore();
+  const { expenses, selectedCategory, setSelectedCategory, fetchExpenses } =
+    useStore();
 
   useEffect(() => {
-    expenses();
+    fetchExpenses();
   }, []);
+
+  const handleFilter = (category) => {
+    console.log("Selected category:", category);
+  };
 
   return (
     <>
@@ -27,6 +34,7 @@ export default function Kakeibos() {
         <label style={{ display: "flex", alignItems: "center", gap: "8px" }}>
           カテゴリー
           <select
+            onChange={(e) => handleFilter(e.target.value)}
             style={{
               padding: "8px",
               borderRadius: "4px",
