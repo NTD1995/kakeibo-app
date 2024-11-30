@@ -10,7 +10,7 @@ export default function Create() {
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("食費");
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const newExpense = {

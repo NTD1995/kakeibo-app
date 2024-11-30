@@ -5,6 +5,13 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import useStore from "../store";
 
+interface Expense {
+  id: number;
+  item: string;
+  amount: number;
+  category: string;
+}
+
 export default function Kakeibos() {
   const router = useRouter();
   const { expenses, selectedCategory, setSelectedCategory, fetchExpenses } =
@@ -14,8 +21,8 @@ export default function Kakeibos() {
     fetchExpenses();
   }, []);
 
-  const handleFilter = (category) => {
-    console.log("Selected category:", category);
+  const handleFilter = (category: string) => {
+    setSelectedCategory(category);
   };
 
   return (
@@ -32,6 +39,19 @@ export default function Kakeibos() {
         }}
       >
         <label style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div style={{ padding: "16px", maxWidth: "800px", margin: "0 auto" }}>
+            <ul style={{ listStyle: "none", padding: "0" }}>
+              {expenses
+                .filter((expense: Expense) =>
+                  selectedCategory
+                    ? expense.category === selectedCategory
+                    : true
+                )
+                .map((expense: Expense) => (
+                  <li key={expense.id}>{}</li>
+                ))}
+            </ul>
+          </div>
           カテゴリー
           <select
             onChange={(e) => handleFilter(e.target.value)}
@@ -66,6 +86,7 @@ export default function Kakeibos() {
             border: "none",
             borderRadius: "4px",
           }}
+          onClick={() => router.push("/create")}
         >
           作成
         </button>
@@ -76,6 +97,7 @@ export default function Kakeibos() {
             border: "none",
             borderRadius: "4px",
           }}
+          onClick={() => router.push("/details")}
         >
           詳細
         </button>

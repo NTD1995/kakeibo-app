@@ -1,5 +1,6 @@
-import create from "zustand";
 import { supabase } from "../lib/supabaseClient";
+
+export const deleteExpense = async (id) => {};
 
 const useStore = create((set) => ({
   expenses: [],
