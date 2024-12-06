@@ -1,21 +1,5 @@
 // 家計簿詳細画面
-import { useRouter } from 'next/router';
-import { Expense, deleteExpense } from '../store'; 
-
-export default function Detail() {
-  const router = useRouter();
-  const { id } = router.query;
-  const { expenses } = useStore();
-  const expense: Expense | undefined = expenses.find((e: React.FormEvent<HTMLFormElement>) => e.id === id);
-
-  const handleEdit = () => {
-    router.push(`/edit/${id}`); 
-  };
-
-  const handleDelete = async () => {
-    await deleteExpense(id);
-    router.push('/');
-  };
+import { useRouter } from "next/router";
 
 export default function Detail() {
   return (
@@ -65,7 +49,6 @@ export default function Detail() {
           <span
             style={{ width: "100%", border: "1px solid #ccc", padding: "5px" }}
           >
-            {expense?.item}
             朝ごはん
           </span>
         </div>
@@ -81,7 +64,6 @@ export default function Detail() {
           <span
             style={{ width: "100%", border: "1px solid #ccc", padding: "5px" }}
           >
-            {expense?.amount}
             500円
           </span>
         </div>
@@ -94,7 +76,6 @@ export default function Detail() {
           }}
         >
           <p>カテゴリー</p>
-          {expense?.category}
           <div style={{ display: "flex", gap: "10px" }}>
             <select
               style={{
