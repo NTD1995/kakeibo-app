@@ -41,10 +41,9 @@ export default function Create() {
             borderRadius: "4px",
             marginLeft: "auto",
           }}
+          onClick={() => router.back()}
         >
-          <button type="button" onClick={() => router.back()}>
-            戻る
-          </button>
+          戻る
         </button>
       </div>
 
