@@ -4,6 +4,22 @@ import "./globals.css";
 import { Providers } from "./providers";
 import { Headers } from "./components/Header";
 
+import { KakeiboProvider } from "./context/KakeiboContext";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+function App() {
+  return (
+    <KakeiboProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Kakeibos />} />
+          <Route path="/detail/:id" element={<KakeiboDetail />} />
+        </Routes>
+      </BrowserRouter>
+    </KakeiboProvider>
+  );
+}
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
