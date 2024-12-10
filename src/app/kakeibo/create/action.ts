@@ -17,9 +17,11 @@ export async function insertData(formData: FormData) {
   };
 
   // データ挿入
-  const { error } = await supabase
-    .from("expensive") // todosテーブルに
-    .insert({ text: inputs.text }); // 入力されたテキストを挿入
+  const { error } = await supabase.rpc("insert_data", {
+    category,
+    expensive,
+    user,
+  });
 
   // エラーが発生した場合
   if (error) {
