@@ -3,13 +3,9 @@
 
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { useContext, useState } from "react";
-import KakeiboContext from "../context/KakeiboContext";
 
 export default function Kakeibos() {
   const router = useRouter();
-  const { kakeibos, setKakeibos } = useContext(KakeiboContext);
-  const [selectedCategory, setSelectedCategory] = useState("");
 
   return (
     <>

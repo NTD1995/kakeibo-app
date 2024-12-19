@@ -1,16 +1,7 @@
 // 家計簿詳細画面
 import { useRouter } from "next/router";
-import { useContext } from "react";
-import { useParams } from "react-router-dom";
-import KakeiboContext from "../context/KakeiboContext";
 
 export default function Detail() {
-  function KakeiboDetail() {
-  const { id } = useParams();
-  const { kakeibos } = useContext(KakeiboContext);
-  const kakeibo = kakeibos.find(k => k.id === id);
-
-  
   return (
     <>
       <h1 style={{ margin: "0", paddingLeft: "40px", fontSize: "24px" }}>

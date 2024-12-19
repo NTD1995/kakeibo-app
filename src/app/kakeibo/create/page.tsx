@@ -6,11 +6,12 @@ import { useRouter } from "next/navigation";
 
 export default function Create() {
   const router = useRouter();
+  const [items, setItems] = useState("");
   const [item, setItem] = useState("");
   const [amount, setAmount] = useState("");
   const [category, setCategory] = useState("食費");
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmitChange = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const newExpense = {
@@ -18,6 +19,14 @@ export default function Create() {
       amount,
       category,
     };
+  };
+
+    const handleSelectChange = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+  const addItem = () => {
+    const newItems = [...items, item];
+    setItems(newItems)
   };
 
   return (
@@ -47,7 +56,7 @@ export default function Create() {
         </button>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitChange}>
         <div
           style={{
             display: "flex",
@@ -95,6 +104,7 @@ export default function Create() {
                   borderRadius: "4px",
                   border: "1px solid #ccc",
                 }}
+                onChange={handleSelectChange}
               >
                 <option value="食費">食費</option>
                 <option value="水道光熱費">水道光熱費</option>
@@ -123,8 +133,10 @@ export default function Create() {
               borderRadius: "4px",
               marginLeft: "auto",
             }}
+            onClick={addItem}
           >
-            <input type="submit" value="作成" />
+            <input type="text" onChange={handleSubmitChange} />
+            作成
           </button>
         </div>
       </form>

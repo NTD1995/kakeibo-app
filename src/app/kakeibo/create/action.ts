@@ -14,13 +14,14 @@ export async function insertData(formData: FormData) {
   // フォームから入力値を取得
   const inputs = {
     text: formData.get("text") as string,
+    category: formData.get("category") as string,
+    expensive: formData.get("expensive") === "true",
+    user: formData.get("user") as string,
   };
 
   // データ挿入
   const { error } = await supabase.rpc("insert_data", {
-    category,
-    expensive,
-    user,
+    ...inputs,
   });
 
   // エラーが発生した場合
